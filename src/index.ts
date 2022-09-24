@@ -1,31 +1,38 @@
 import express from "express";
-import mongoose from "mongoose";
 import helmet from "helmet";
 import cors from "cors";
 import morgan from "morgan";
 
+import * as dotenv from "dotenv";
+dotenv.config();
+
+import { connect } from "./mongo";
+import { Player } from "./models";
+
 const app = express();
 app.use(express.json());
-
 // adding Helmet to enhance your Rest API's security
 app.use(helmet());
-
 // enabling CORS for all requests
 app.use(cors());
-
 // adding morgan to log HTTP requests
-app.use(morgan("combined"));
+app.use(morgan());
 
-const port = 3000;
+connect();
+const port = process.env.PORT;
 
 app.get("/", (req, res) => {
     res.send("Hello World, from express");
 });
 
 app.get("/2xf-discord-auth", (req, res) => {
-    console.log(req, res);
     res.send("Hello World, from express");
 });
+
+app.post("/add-new-player", (req, res) => {
+    // const newplayer = new Player({id: });
+});
+
 
 app.listen(port, () => {
     console.log(`Server started at port ${port}`);
