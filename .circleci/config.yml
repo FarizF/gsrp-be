@@ -62,4 +62,4 @@ workflows:
     when:
       equal: [ production, << pipeline.git.branch >> ]
     jobs:
-      - gsrp-deploy
+      - gsrp-be-deploy
