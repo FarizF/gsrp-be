@@ -46,11 +46,8 @@ jobs:
                 name: Add VPS to known hosts
                 command: ssh-keyscan -H 37.97.158.147 >> ~/.ssh/known_hosts
             - run:
-                name: Update apt
-                command: sudo apt update
-            - run:
-                name: Install rsync
-                command: sudo apt install rsync
+                name: Update apt & install rsync
+                command: sudo apt-get update && sudo apt-get install rsync
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
