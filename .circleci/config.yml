@@ -8,7 +8,7 @@ orbs:
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
-  gsrp-be-production:
+  gsrp-be-build:
     # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
     # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
 
@@ -33,10 +33,33 @@ jobs:
           root: ~/project
           paths:
             - .
+  
+  gsrp-be-deploy:
+    executor: node/default
+    steps:
+      - checkout
+      - when:
+          condition:
+            equal: [ production, << pipeline.git.branch >> ]
+          steps:
+            - run: 
+                name: Add VPS to known hosts
+                command: ssh-keyscan -H 37.97.158.147 >> ~/.ssh/known_hosts
+            - run:
+                name: Update apt
+                command: sudo apt update
+            - run:
+                name: Install rsync
+                command: sudo apt install rsync
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
-  gsrp-be-production:
+  gsrp-be-build:
     jobs:
-      - gsrp-be-production
+      - gsrp-be-build
+  gsrp-deploy:
+    when:
+      equal: [ production, << pipeline.git.branch >> ]
+    jobs:
+      - gsrp-deploy
