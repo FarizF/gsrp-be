@@ -39,13 +39,13 @@ jobs:
           steps:
             - run: 
                 name: Add VPS to known hosts
-                command: ssh-keyscan -H 37.97.158.147 >> ~/.ssh/known_hosts
+                command: ssh-keyscan -H ${BLADE_IP} >> ~/.ssh/known_hosts
             - run:
                 name: Update apt & install rsync
                 command: sudo apt-get update && sudo apt-get install rsync
             - run:
                 name: Send GSRP-BE to server (SSH)
-                command: rsync -avce ssh --delete ./build/ fariz@37.97.158.147:~/gsrp-be
+                command: rsync -avce ssh --delete ./build/ ${BLADE_USER}@${BLADE_IP}:${OUTPUT_FOLDER}
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
