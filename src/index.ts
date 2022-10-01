@@ -30,7 +30,7 @@ app.get("/2xf-discord-auth", (req, res) => {
 });
 
 app.post("/add-new-player", (req, res) => {
-    // const newplayer = new Player({id: });
+    let newplayer: typeof Player;
 });
 
 
