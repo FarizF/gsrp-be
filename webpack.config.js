@@ -9,7 +9,7 @@ const {
 module.exports = {
     entry: "./src/index.ts",
     mode: NODE_ENV,
-    target: "web",
+    target: "node",
     output: {
         path: path.resolve(__dirname, "build"),
         filename: "gsrp-be.js"
