@@ -46,9 +46,9 @@ jobs:
             - run:
                 name: Send package.json to server (SSH)
                 command: rsync -avce ssh --delete ./package.json ${BLADE_USER}@${BLADE_IP}:${OUTPUT_FOLDER}
-            - run:
-                name: Send GSRP-BE to server (SSH)
-                command: rsync -avce ssh --delete ./build/ ${BLADE_USER}@${BLADE_IP}:${OUTPUT_FOLDER}
+            # - run:
+            #     name: Send GSRP-BE to server (SSH)
+            #     command: rsync -avce ssh --delete ./build/ ${BLADE_USER}@${BLADE_IP}:${OUTPUT_FOLDER}
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
