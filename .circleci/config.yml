@@ -44,9 +44,6 @@ jobs:
                 name: Update apt & install rsync
                 command: sudo apt-get update && sudo apt-get install rsync
             - run:
-                name: Send package.json to server (SSH)
-                command: rsync -avce ssh -I ./package.json ${BLADE_USER}@${BLADE_IP}:${OUTPUT_FOLDER}
-            - run:
                 name: Send GSRP-BE to server (SSH)
                 command: rsync -avce ssh -I ./build/ ${BLADE_USER}@${BLADE_IP}:${OUTPUT_FOLDER}
 
