@@ -45,7 +45,7 @@ jobs:
                 command: sudo apt-get update && sudo apt-get install rsync
             - run:
                 name: Log build folder contents
-                command: ls
+                command: ls ./build/
             - run:
                 name: Send GSRP-BE to server (SSH)
                 command: rsync -avce ssh --delete ./build/ ${BLADE_USER}@${BLADE_IP}:${OUTPUT_FOLDER}
