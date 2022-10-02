@@ -1658,6 +1658,11 @@ type-is@~1.6.18:
     media-typer "0.3.0"
     mime-types "~2.1.24"
 
+typescript-bundle@^1.0.18:
+  version "1.0.18"
+  resolved "https://registry.yarnpkg.com/typescript-bundle/-/typescript-bundle-1.0.18.tgz#1031f70fc63bfe340c9d37ab65777a78427445dd"
+  integrity sha512-ZtzMZPzW3bnL4c+jBjgSHxlnW9TdWQjFS5RLk4k0YJb85zv78rdslf13mKXUgHZjTeEyO8R59IQ4WqSdlEXhAw==
+
 typescript@^4.8.3:
   version "4.8.3"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.8.3.tgz#d59344522c4bc464a65a730ac695007fdb66dd88"
