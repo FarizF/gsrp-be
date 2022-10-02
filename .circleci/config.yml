@@ -17,20 +17,18 @@ jobs:
 
     # Add steps to the job
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
+    docker:
+      - image: 'cimg/base:stable'
     executor: node/default # use the default executor defined within the orb
     steps:
       - checkout
-      - node/install-packages:
-          pkg-manager: yarn
+      - node/install:
+          install-yarn: true
       # - run:
       #     command: yarn test
       #     name: Run tests
-      - run:
-          name: Build GSRP-BE for Production
-          command: yarn 
-      - run:
-          name: Build GSRP-BE for Production
-          command: yarn build
+      - node/run:
+          yarn-run: build
       - persist_to_workspace:
           name: Build cache
           root: ~/project
@@ -48,7 +46,7 @@ jobs:
                 command: sudo apt-get update && sudo apt-get install rsync
             - run:
                 name: Send GSRP-BE to server (SSH)
-                command: rsync -avce ssh --delete ./build/gsrp-be.js ${BLADE_USER}@${BLADE_IP}:${OUTPUT_FOLDER}
+                command: rsync -avce ssh --delete ./build/ ${BLADE_USER}@${BLADE_IP}:${OUTPUT_FOLDER}
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
