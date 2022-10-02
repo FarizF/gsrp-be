@@ -17,6 +17,7 @@
         "resolveJsonModule": true, /* Enables importing json files */
         "moduleResolution": "node", /* Specifies how typescript looks up a file for a given module */
         "forceConsistentCasingInFileNames": true, /* Ensure that casing is okay in imports */
+        "sourceMap": true
     },
     "compileOnSave": true, /* Enables compile on save for this project */
     "include": [ /* Specifies the files which will be compiled */

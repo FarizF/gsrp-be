@@ -35,5 +35,5 @@
             "always"
         ]
     },
-    "ignorePatterns": ["build/**"]
+    "ignorePatterns": ["build/**", "webpack.config.js"]
 }
