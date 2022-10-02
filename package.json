@@ -8,7 +8,7 @@
     "start": "nodemon src/index.ts",
     "lint": "eslint .",
     "prebuild": "yarn lint",
-    "build": "tsc-bundle ./index.ts --outFile ./build/bundle.js",
+    "build": "tsc-bundle --outFile ./build/bundle.js",
     "prestart": "npm run build"
   },
   "repository": {
