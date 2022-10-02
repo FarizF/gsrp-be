@@ -14,11 +14,11 @@ jobs:
 
     # docker:
     #   - image: cimg/node:18.9.1
+    docker:
+      - image: 'cimg/base:stable'
 
     # Add steps to the job
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
-    docker:
-      - image: 'cimg/base:stable'
     executor: node/default # use the default executor defined within the orb
     steps:
       - checkout
@@ -27,8 +27,9 @@ jobs:
       # - run:
       #     command: yarn test
       #     name: Run tests
-      - node/run:
-          yarn-run: build
+      - run:
+          name: Build GSRP-BE for Production
+          command: yarn build
       - persist_to_workspace:
           name: Build cache
           root: ~/project
