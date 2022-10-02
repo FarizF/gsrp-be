@@ -12,7 +12,7 @@ module.exports = {
     target: "node",
     output: {
         path: path.resolve(__dirname, "build"),
-        filename: "index.js"
+        filename: "gsrp-be.js"
     },
     resolve: {
         extensions: [".ts", ".js"],
