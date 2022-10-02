@@ -1,6 +1,6 @@
 const path = require("path");
-const nodeExternals = require("webpack-node-externals");
 const NodemonPlugin = require('nodemon-webpack-plugin');
+const webpack = require("webpack");
 
 const {
     NODE_ENV = "production"
@@ -27,11 +27,9 @@ module.exports = {
             }
         ]
     },
-    externals: [ nodeExternals([
-        "express",
-        "dotenv",
-        "mongodb"
-    ]) ],
-    plugins: [ new NodemonPlugin() ],
+    plugins: [
+        new NodemonPlugin(),
+        new webpack.optimize.ModuleConcatenationPlugin()
+    ],
     watch: NODE_ENV === 'development'
 }
