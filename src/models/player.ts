@@ -7,4 +7,4 @@ const schema = new mongoose.Schema({
     characters: [Character.schema]
 });
 
-export const Player = mongoose.model("Player", schema);
+export const Player = mongoose.model("Player", schema, "players");
