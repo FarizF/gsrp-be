@@ -8,7 +8,7 @@ router.use((req, res, next) => {
     next();
 });
 
-router.post("/", (req, res) => {
+router.post("/new-player", (req, res) => {
     // let newplayer: Player = {};
     console.log(req, res);
 });
