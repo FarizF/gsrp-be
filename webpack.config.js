@@ -15,7 +15,8 @@ module.exports = {
         filename: "gsrp-be.js"
     },
     resolve: {
-        extensions: [".ts", ".js"],
+        extensions: [".ts", ".js", ".node"],
+        modules: ['node_modules']
     },
     module: {
         rules: [
@@ -31,5 +32,8 @@ module.exports = {
         new NodemonPlugin(),
         new webpack.optimize.ModuleConcatenationPlugin()
     ],
-    watch: NODE_ENV === 'development'
+    watch: NODE_ENV === 'development',
+    stats: {
+        errorDetails: true
+    }
 }

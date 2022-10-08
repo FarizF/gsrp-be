@@ -7,7 +7,8 @@ import * as dotenv from "dotenv";
 dotenv.config();
 
 import { connect } from "./mongo";
-import { Player } from "./models";
+
+import register from "./routes/register";
 
 const app = express();
 app.use(express.json());
@@ -21,20 +22,12 @@ app.use(morgan());
 connect();
 const port = process.env.PORT;
 
+app.listen(port, () => {
+    console.log(`Server started at port ${port}`);
+});
+
 app.get("/", (req, res) => {
     res.send("Hello World, from express");
 });
 
-app.get("/2xf-discord-auth", (req, res) => {
-    res.send("Hello World, from express");
-});
-
-app.post("/add-new-player", (req, res) => {
-    let newplayer: typeof Player;
-    console.log(req, res);
-});
-
-
-app.listen(port, () => {
-    console.log(`Server started at port ${port}`);
-});
+app.use("/register", register);
