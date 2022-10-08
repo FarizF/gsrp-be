@@ -26,7 +26,7 @@ app.get("/", (req, res) => {
     res.send("Hello World, from express");
 });
 
-app.use("/register", registerRouter);
+app.use("/register/", registerRouter);
 
 app.listen(port, () => {
     console.log(`Server started at port ${port}`);
