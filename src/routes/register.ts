@@ -3,7 +3,7 @@ import { Router } from "express";
 
 export const router = Router();
 
-router.post("/new-player", (req, res) => {
+router.get("/new-player", (req, res) => {
     // let newplayer: Player = {};
     console.log("TEST");
     console.log(req, res);
