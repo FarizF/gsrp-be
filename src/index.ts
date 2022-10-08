@@ -12,6 +12,7 @@ import RegisterRouter from "./routes/register";
 
 const app = express();
 app.use(express.json());
+app.use(express.urlencoded());
 // adding Helmet to enhance your Rest API's security
 app.use(helmet());
 // enabling CORS for all requests
