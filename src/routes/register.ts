@@ -6,13 +6,13 @@ import { Player } from "../models/";
 
 const router = Router();
 
-router.post("/new-player", (req, res) => {
+router.post("/new-player", async (req, res) => {
     // let newplayer: Player = {};
 
     const newPlayerData = req.body;
     
     const doc = new Player({id: newPlayerData.id, hardwareIds: newPlayerData.hardwareIds, characters: []});
-
+    await doc.save();
 
     res.status(200).send();
 });
