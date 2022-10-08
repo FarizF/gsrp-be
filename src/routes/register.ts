@@ -8,11 +8,7 @@ router.use((req, res, next) => {
     next();
 });
 
-router.get("/2xf-discord-auth", (req, res) => {
-    res.send("Hello World, from express");
-});
-
-router.post("/add-new-player", (req, res) => {
+router.post("/", (req, res) => {
     // let newplayer: Player = {};
     console.log(req, res);
 });
