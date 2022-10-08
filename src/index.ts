@@ -8,7 +8,7 @@ dotenv.config();
 
 import { connect } from "./mongo";
 
-import { router as registerRouter} from "./routes/register";
+import RegisterRouter from "./routes/register";
 
 const app = express();
 app.use(express.json());
@@ -26,7 +26,7 @@ app.get("/", (req, res) => {
     res.send("Hello World, from express");
 });
 
-app.use("/register/", registerRouter);
+app.use("/register/", RegisterRouter);
 
 app.listen(port, () => {
     console.log(`Server started at port ${port}`);
