@@ -7,8 +7,8 @@ const router = Router();
 router.post("/new-player", (req, res) => {
     // let newplayer: Player = {};
     console.log("TEST");
-    console.log(req, res);
-    res.status(200).send(req);
+    console.log(req);
+    res.status(200).send(JSON.stringify(req));
 });
 
 export default router;
