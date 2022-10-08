@@ -6,9 +6,13 @@ import { Player } from "../models/";
 
 const router = Router();
 
-router.post("/new-player", async (req, res) => {
-    // let newplayer: Player = {};
+router.get("/returning/:discordId", async (req, res) => {
+    const discordId = req.params.discordId;
 
+    res.status(200).send(Player.findOne({id: discordId}));
+});
+
+router.post("/new-player", async (req, res) => {
     const newPlayerData = req.body;
     
     const doc = new Player({id: newPlayerData.id, hardwareIds: newPlayerData.hardwareIds});
