@@ -26,7 +26,13 @@ app.get("/", (req, res) => {
     res.send("Hello World, from express");
 });
 
-app.use("/register/", RegisterRouter);
+// app.use("/register/", RegisterRouter);
+
+app.post("/new-player", (req, res) => {
+    // let newplayer: Player = {};
+    console.log("TEST");
+    console.log(req, res);
+});
 
 app.listen(port, () => {
     console.log(`Server started at port ${port}`);
