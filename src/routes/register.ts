@@ -11,8 +11,8 @@ router.post("/new-player", async (req, res) => {
 
     const newPlayerData = req.body;
     
-    // const doc = new Player({id: newPlayerData.id, hardwareIds: newPlayerData.hardwareIds});
-    // await doc.save();
+    const doc = new Player({id: newPlayerData.id, hardwareIds: newPlayerData.hardwareIds});
+    await doc.save();
 
     res.status(200).send(newPlayerData);
 });
