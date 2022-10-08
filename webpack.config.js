@@ -32,8 +32,5 @@ module.exports = {
         new NodemonPlugin(),
         new webpack.optimize.ModuleConcatenationPlugin()
     ],
-    watch: NODE_ENV === 'development',
-    stats: {
-        errorDetails: true
-    }
+    watch: NODE_ENV === 'development'
 }
