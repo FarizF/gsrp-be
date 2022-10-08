@@ -30,4 +30,4 @@ app.get("/", (req, res) => {
     res.send("Hello World, from express");
 });
 
-app.use("/register", register);
+// app.use("/register", register);
