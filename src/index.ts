@@ -8,7 +8,7 @@ dotenv.config();
 
 import { connect } from "./mongo";
 
-import register from "./routes/register";
+import { router as registerRouter} from "./routes/register";
 
 const app = express();
 app.use(express.json());
@@ -30,4 +30,4 @@ app.get("/", (req, res) => {
     res.send("Hello World, from express");
 });
 
-// app.use("/register", register);
+app.use("/register", registerRouter);
