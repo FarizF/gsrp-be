@@ -22,10 +22,10 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
-"@fariz_f/gsrp-types@^1.0.7":
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/@fariz_f/gsrp-types/-/gsrp-types-1.0.7.tgz#16bc63b9703796006d776c8c20c3dd5529bfc74d"
-  integrity sha512-XnQwyzQadBCng3B6LUAqgo8CSxT8PFC0F9JOz3HxereDwbJItvkPzBf0SElrzzjHd0WZUOgV2reTqJcBahmJog==
+"@fariz_f/gsrp-types@^1.0.8":
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/@fariz_f/gsrp-types/-/gsrp-types-1.0.8.tgz#970c939da0b0a11499873d48a5e0014c5588e4f2"
+  integrity sha512-RjvNpiwSdkefvha+Sq7qV7EczGCWYRAKh+G7+nXATGLyv/8UjPRIDB1VJYHlHKu9DAHQD6hoROTd5nYKJ6QzKQ==
 
 "@humanwhocodes/config-array@^0.10.4":
   version "0.10.4"
