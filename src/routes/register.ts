@@ -8,9 +8,9 @@ const router = Router();
 
 router.get("/returning/:discordId", async (req, res) => {
     const discordId = req.params.discordId;
-    const player = Player.findOne({id: discordId});
+    const player = await Player.findOne({"_id": discordId});
 
-    res.status(200).send(JSON.stringify(player));
+    res.status(200).send(player);
 });
 
 router.post("/new-player", async (req, res) => {
